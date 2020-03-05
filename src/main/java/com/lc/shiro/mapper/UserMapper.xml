@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件存放CRUD的sql语句 -->
+<mapper namespace="com.lc.shiro.mapper.UserMapper">
+	<select id="findByName" resultType="com.lc.shiro.domain.User" parameterType="java.lang.String">
+		select id,name,password from user where name=#{name}
+	</select>
+	<select id="findById" resultType="com.lc.shiro.domain.User">
+		select id,name,password,perms from user where id=#{id}
+	</select>
+</mapper>
